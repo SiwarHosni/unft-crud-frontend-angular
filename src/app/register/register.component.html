@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+              <h1 class="text-white">Créer Votre Compte</h1>
+              <p class="text-lead text-white">Cette Page vous permettra de créer votre compte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <!-- Table -->
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="card bg-secondary border-0">
+            
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <small>Insérez vos information</small>
+              </div>
+              <form role="form" [formGroup]="myForm" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Nom Utilisateur" type="text" formControlName="nom">
+                    <div *ngIf="f.nom.touched && f.nom.invalid">
+                      <small *ngIf="f.nom.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
+                      <small *ngIf="f.nom.errors.pattern" class="text-danger">Invalide</small>
+                      <small *ngIf="f.nom.errors.minlength" class="text-danger">Invalide, Nom Utilisateur doit contenir 2 caractères au minimum</small>
+                    </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Email" type="email" formControlName="email">
+                    <div *ngIf="f.email.touched && f.email.invalid">
+                      <small *ngIf="f.email.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
+                      <small *ngIf="f.email.errors.email" class="text-danger">Email Invalide</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Mot de passe" type="password" formControlName="password">
+                    <div *ngIf="f.password.touched && f.password.invalid">
+                      <small *ngIf="f.password.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
+                      <small *ngIf="f.password.errors.minlength" class="text-danger">Taille insuffisante</small>
+                      
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary mt-4">Créer Compte</button>
+                </div>
+
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isSignUpFailed">
+                  <strong>Erreur!</strong> Inscription échoué !<br />{{ errorMessage }}
+              </div>
+
+              <div class="alert alert-success" role="alert" *ngIf="isSuccessful">
+                <strong>Succès!</strong> Utilisateur ajouté avec succès!
+            </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

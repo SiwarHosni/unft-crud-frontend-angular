@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~12.0.0",
+    "@angular/animations": "^12.0.2",
     "@angular/common": "~12.0.0",
     "@angular/compiler": "~12.0.0",
     "@angular/core": "~12.0.0",
@@ -18,7 +18,11 @@
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
+    "@creative-tim-official/argon-dashboard-free": "^1.2.0",
+    "angular-confirmation-popover": "^6.0.0",
+    "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
+    "save": "^2.4.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },
