@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Encaissement } from '../encaissement';
+import { EncaissementService } from '../encaissement.service';
 
 
 @Component({
@@ -8,10 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncaissementComponent implements OnInit {
 
-  content: string;
-  constructor() { }
+  Encaissements: Encaissement[];
+ 
+  constructor(private encaissementService: EncaissementService,
+    private router:Router) { }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+  
+  }
 
 }

@@ -364,7 +364,7 @@
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
-                  <tr>
+                  <tr >
                     <th scope="col" class="sort" data-sort="num-dossier">Num de l'encaissement</th>
                     <th scope="col" class="sort" data-sort="num-dossier">Num de reçu</th>
                     <th scope="col">Montant payé</th>
@@ -376,7 +376,7 @@
                   </tr>
                 </thead>
                 <tbody class="list">
-                  <tr>
+                  <tr *ngFor = "let encaissement of Encaissements">
                     <th scope="row">
                       <div class="media align-items-center">
                         <div class="numencaissement">
