@@ -28,12 +28,14 @@ export class NvbenefComponent implements OnInit {
   saveBeneficiaire(){
     this.beneficiaireService.createBeneficiaire(this.beneficiaire).subscribe( data =>{
       console.log(data);
-      this.goToEmployeeList();
+      this.goToBeneficiaireList();
     },
     error => console.log(error));
   }
 
-  goToEmployeeList(){
+
+  
+  goToBeneficiaireList(){
     this.router.navigate(['/beneficiaires']);
   }
   

@@ -375,31 +375,10 @@
                     <form [formGroup]="myForm" (ngSubmit)="saveEnc()">
                       <h6 class="heading-small text-muted mb-4">Information de l'Encaissement</h6>
                       <div class="pl-lg-4">
-                        <div class="row">
-                            <div class="col-lg-4">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-username">Numero de dossier</label>
-                                <input type="text" id="input-username" class="form-control" placeholder="Numero de dossier" formControlName="numd">
-                                <div *ngIf="f.numd.touched && f.numd.invalid">
-                                  <small *ngIf="f.numd.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
-                              </div>
-                              </div>
-                            </div>
-                        </div>
+                        
                         <div class="row">
                           
-                          <div class="col-lg-4">
-                            <div class="form-group">
-                              <label class="form-control-label" for="input-email">Cin Bénéficiaire</label>
-                              <input class="form-control" type="text" value="Cin" id="input-cin" placeholder="Cin" formControlName="cin">
-                              <div *ngIf="f.cin.touched && f.cin.invalid">
-                                <small *ngIf="f.cin.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
-                                <small *ngIf="f.cin.errors.maxlength" class="text-danger">Invalide</small>
-                                <small *ngIf="f.cin.errors.minlength" class="text-danger">Invalide</small>
-                            </div>
-                            </div>
-                          </div>
-                          
+                         
                           <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-email">Numéro de Reçu de paiement</label>

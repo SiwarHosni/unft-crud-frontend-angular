@@ -403,10 +403,21 @@
                         <span class="completion mr-2">{{ encaissement.methode_penc }}</span>
                       </div>
                     </td>
-                    <td>
-                      <button class="btn btn-danger btn-sm" (click)="deleteApprenant(apprenant.cin)"><i class="far fa-trash-alt"></i> Delete</button>
-                      <button class="btn btn-warning btn-sm" [routerLink]="['/update-user',person._id]"><i class="fas fa-edit"></i> Update</button>
-                      <button class="btn btn-info btn-sm" [routerLink]="['/benefDetails']"><i class="fas fa-info-circle"></i> Détails</button>
+                    <td class="text-center">
+                      <button class="btn btn-danger btn-sm"
+                      mwlConfirmationPopover
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      placement="left"
+                      (Valider)="confirmClicked= true"
+                      (Annuler)="cancelClicked = true"
+                      
+                      (click)="confirmClicked = false; cancelClicked = false">
+                      
+                  
+                       <i class="fa fa-trash-alt"></i> Supprimer</button>
+                      <button class="btn btn-success btn-sm" ><i class="fas fa-edit"></i> Modifier</button>
+                      <button class="btn btn-info btn-sm"> Détails</button>
                     </td>
                   </tr>
                 </tbody>

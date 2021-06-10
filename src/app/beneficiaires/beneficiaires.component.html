@@ -418,17 +418,16 @@
                             mwlConfirmationPopover
                             [popoverTitle]="popoverTitle"
                             [popoverMessage]="popoverMessage"
-                            [placement]="placement"
-                            (Valider)="deleteBneneficiaire(beneficiaire.cin)"
+                            placement="left"
+                            (Valider)="confirmClicked= true"
                             (Annuler)="cancelClicked = true"
-                            confirmButtonType="danger"
-                            cancelButtonType="outline-secondary"
+                            
                             (click)="confirmClicked = false; cancelClicked = false">
                             
                         
-                             <i class="far fa-trash-alt"></i> Delete</button>
-                            <button class="btn btn-success btn-sm" [routerLink]="['/update-user',person._id]"><i class="fas fa-edit"></i> Update</button>
-                            <button class="btn btn-info btn-sm" [routerLink]="['/benefDetails']"> Détails</button>
+                             <i class="fa fa-trash-alt"></i> Delete</button>
+                            <button class="btn btn-success btn-sm" ><i class="fas fa-edit"></i> Update</button>
+                            <button class="btn btn-info btn-sm" > Détails</button>
                           </td>
                   </tr>
                 </tbody>

@@ -10,14 +10,16 @@ import { ApprenantService } from '../Service/apprenant.service';
 })
 export class ApprenantsComponent implements OnInit {
 
+  
   apprenants : Apprenant[];
 
   constructor(private router: Router, private apprenantService : ApprenantService) { }
 
   ngOnInit(): void {
+    this.getApprenants();
   }
 
-  private getapprenants(){
+  private getApprenants(){
     this.apprenantService.getallApprenant().subscribe(data => {
       this.apprenants = data;
     });
@@ -32,8 +34,13 @@ export class ApprenantsComponent implements OnInit {
   deleteapprenant(id: number){
     this.apprenantService.deleteApprenant(id).subscribe( data => {
       console.log(data);
-      this.getapprenants();
+      this.getApprenants();
     })
   }
-
+  popoverTitle = 'Supprimer Apprenant';
+  popoverMessage = 'voulez-vous vraiment supprimer cet apprenant de façon permanente?';
+  confirmText = 'Oui <i class="fas fa-check"></i>';
+  cancelText = 'Non <i class="fas fa-times"></i>';
+  confirmClicked = false;
+  cancelClicked = false;
 }

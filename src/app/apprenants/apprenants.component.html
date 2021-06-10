@@ -337,14 +337,13 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#" [routerLink]="['/profil']"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#" [routerLink]="['/formations']">Apprenants</a></li>
+                  <li class="breadcrumb-item"><a href="#" [routerLink]="['apprenants']">Apprenants</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Apprenants</li>
                 </ol>
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral" [routerLink]="['/nvappr']"><i class="ni ni-single-copy-04"></i> Nouveau</a>
-              <a href="#" class="btn btn-sm btn-neutral">Exporter</a>
+              <a href="#" class="btn btn btn-neutral" [routerLink]="['/nvappr']"><i class="ni ni-single-copy-04"></i> Nouveau</a>
             </div>
           </div>
         </div>
@@ -369,13 +368,13 @@
                     <th scope="col" class="sort" data-sort="date_naiss">date de naissance</th>
                     <th scope="col" class="sort" data-sort="sexe">sexe</th>
                     <th scope="col" class="sort" data-sort="tel">tel</th>
-                    <th scope="col" class="sort" data-sort="adresse" >Action</th>
+                    <th scope="col" class="sort" data-sort="adresse" class="text-center" >Action</th>
 
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody class="list">
-                  <tr *ngFor="Let apprenant of apprenants">
+                  <tr *ngFor= "let apprenant of apprenants">
                     <th scope="row">
                       <div class="media align-items-center">
                         <div class="cin">
@@ -396,10 +395,21 @@
                         <i class="bg-warning"></i>
                         <span class="tel">{{ apprenant.tel }}</span>
                     </td>
-                    <td>
-                      <button class="btn btn-danger btn-sm" (click)="deleteApprenant(apprenant.cin)"><i class="far fa-trash-alt"></i> Delete</button>
-                      <button class="btn btn-warning btn-sm" [routerLink]="['/update-user',person._id]"><i class="fas fa-edit"></i> Update</button>
-                      <button class="btn btn-info btn-sm" [routerLink]="['/benefDetails']"><i class="fas fa-info-circle"></i> Détails</button>
+                    <td class="text-center">
+                      <button class="btn btn-danger btn-sm"
+                      mwlConfirmationPopover
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      placement="left"
+                      (Valider)="confirmClicked= true"
+                      (Annuler)="cancelClicked = true"
+                      
+                      (click)="deleteapprenant(apprenant.cin); cancelClicked = false">
+                      
+                  
+                       <i class="fa fa-trash-alt"></i> Supprimer</button>
+                      <button class="btn btn-success btn-sm" ><i class="fas fa-edit"></i> Modifier</button>
+                      <button class="btn btn-info btn-sm"> Détails</button>
                     </td>
                     
                   </tr>

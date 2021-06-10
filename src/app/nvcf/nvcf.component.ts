@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormControl , FormBuilder , Validators } from '@angular/forms'
+import { Router } from '@angular/router';
+import { Centform } from '../centform';
+import { CentformService } from '../Service/centform.service';
 
 @Component({
   selector: 'app-nvcf',
@@ -8,7 +11,11 @@ import { FormGroup , FormControl , FormBuilder , Validators } from '@angular/for
 })
 export class NvcfComponent implements OnInit {myForm: FormGroup
 
-  constructor(private fb: FormBuilder) {}
+  centform : Centform=new Centform();
+  submitted= false;
+  constructor(private fb: FormBuilder,
+    private centformService:CentformService,
+    private router:Router) {}
 
   
 
@@ -24,7 +31,24 @@ export class NvcfComponent implements OnInit {myForm: FormGroup
   }
   get f() { return this.myForm.controls; }
 
-  saveCf(){
-    console.log(this.myForm.value);
+  
+  saveCf() {  
+    this.centformService.createCentform(this.centform)  
+      .subscribe(data =>{
+        console.log(data);
+        this.goToCformList();
+      },
+      error => console.log(error));  
+  }  
+
+  
+  goToCformList(){
+    this.router.navigate(['/centform']);
   }
+  
+  onSubmit(){
+    console.log(this.centform);
+    this.saveCf();
+  }
+
 }

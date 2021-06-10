@@ -343,8 +343,7 @@
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-              <a href="#" class="btn btn-sm btn-neutral" [routerLink]="['/nvprojet']"><i class="ni ni-single-copy-04"></i> Nouveau</a>
-              <a href="#" class="btn btn-sm btn-neutral">Exporter</a>
+              <a href="#" class="btn btn btn-neutral" [routerLink]="['/nvprojet']"><i class="ni ni-single-copy-04"></i> Nouveau</a>
             </div>
           </div>
         </div>
@@ -364,21 +363,21 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col" class="sort" data-sort="num-dossier">Num Dossier</th>
+                    <th scope="col" class="sort" data-sort="num-dossier" >Num Projet</th>
                     <th scope="col" class="sort" data-sort="cin">CIN Bénéficiaire</th>
                     <th scope="col" class="sort" data-sort="montant">Secteur D'activité</th>
                     <th scope="col">Type du projet</th>
                     <th scope="col" class="sort" data-sort="duree">Activité</th>
                     <th scope="col" class="sort" data-sort="mpaiement">Adresse du projet</th>
-                    <th scope="col"></th>
+                    <th scope="col" class="text-center" >Action</th>
                   </tr>
                 </thead>
                 <tbody class="list">
                   <tr>
                     <th scope="row">
-                      <div class="media align-items-center">
+                      <div >
                         <div class="cin">
-                          <span class="name mb-0 text-sm">9260</span>
+                          <span class="name mb-0 text-sm" >1</span>
                         </div>
                       </div>
                     </th>
@@ -398,379 +397,37 @@
                     </td>
                     <td>
                       <div class="d-flex align-items-center">
-                        <span class="completion mr-2">Textile</span>
+                        <span class="completion mr-2">Création</span>
                       </div>
                     </td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <span class="completion mr-2">13 Rue Dalia, Ras Jebal</span>
+                            <span class="completion mr-2">02 Rue 14 Janvier, Tunis</span>
                           </div>
                     </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Consulter</a>
-                          <a class="dropdown-item" href="#">Modifier</a>
-                          <a class="dropdown-item" href="#">Copier</a>
-                          <a class="dropdown-item" href="#">Supprimer</a>
-                        </div>
-                      </div>
+                    <td class="text-center">
+                      <button class="btn btn-danger btn-sm"
+                      mwlConfirmationPopover
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      placement="left"
+                      (Valider)="confirmClicked= true"
+                      (Annuler)="cancelClicked = true"
+                      
+                      (click)="confirmClicked = false; cancelClicked = false">
+                      
+                  
+                       <i class="fa fa-trash-alt"></i> Supprimer</button>
+                      <button class="btn btn-success btn-sm" ><i class="fas fa-edit"></i> Modifier</button>
+                      <button class="btn btn-info btn-sm"> Détails</button>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="cin">
-                          <span class="name mb-0 text-sm">9260</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td class="num-dossier">
-                      11409260
-                    </td>
-                    <td>
-                      
-                        <i class="bg-warning"></i>
-                        <span class="nom-prenom">Petit Métier</span>
-                     
-                    </td>
-                    <td>
-                      <div class="avatar-group">
-                      <span class="date_naiss">Lancement</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="completion mr-2">Textile</span>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <span class="completion mr-2">13 Rue Dalia, Ras Jebal</span>
-                          </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Consulter</a>
-                          <a class="dropdown-item" href="#">Modifier</a>
-                          <a class="dropdown-item" href="#">Copier</a>
-                          <a class="dropdown-item" href="#">Supprimer</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="cin">
-                          <span class="name mb-0 text-sm">9260</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td class="num-dossier">
-                      11409260
-                    </td>
-                    <td>
-                      
-                        <i class="bg-warning"></i>
-                        <span class="nom-prenom">Petit Métier</span>
-                     
-                    </td>
-                    <td>
-                      <div class="avatar-group">
-                      <span class="date_naiss">Lancement</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="completion mr-2">Textile</span>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <span class="completion mr-2">13 Rue Dalia, Ras Jebal</span>
-                          </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Consulter</a>
-                          <a class="dropdown-item" href="#">Modifier</a>
-                          <a class="dropdown-item" href="#">Copier</a>
-                          <a class="dropdown-item" href="#">Supprimer</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="cin">
-                          <span class="name mb-0 text-sm">9260</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td class="num-dossier">
-                      11409260
-                    </td>
-                    <td>
-                      
-                        <i class="bg-warning"></i>
-                        <span class="nom-prenom">Petit Métier</span>
-                     
-                    </td>
-                    <td>
-                      <div class="avatar-group">
-                      <span class="date_naiss">Lancement</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="completion mr-2">Textile</span>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <span class="completion mr-2">13 Rue Dalia, Ras Jebal</span>
-                          </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Consulter</a>
-                          <a class="dropdown-item" href="#">Modifier</a>
-                          <a class="dropdown-item" href="#">Copier</a>
-                          <a class="dropdown-item" href="#">Supprimer</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="cin">
-                          <span class="name mb-0 text-sm">9260</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td class="num-dossier">
-                      11409260
-                    </td>
-                    <td>
-                      
-                        <i class="bg-warning"></i>
-                        <span class="nom-prenom">Petit Métier</span>
-                     
-                    </td>
-                    <td>
-                      <div class="avatar-group">
-                      <span class="date_naiss">Lancement</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="completion mr-2">Textile</span>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <span class="completion mr-2">13 Rue Dalia, Ras Jebal</span>
-                          </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Consulter</a>
-                          <a class="dropdown-item" href="#">Modifier</a>
-                          <a class="dropdown-item" href="#">Copier</a>
-                          <a class="dropdown-item" href="#">Supprimer</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="cin">
-                          <span class="name mb-0 text-sm">9260</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td class="num-dossier">
-                      11409260
-                    </td>
-                    <td>
-                      
-                        <i class="bg-warning"></i>
-                        <span class="nom-prenom">Petit Métier</span>
-                     
-                    </td>
-                    <td>
-                      <div class="avatar-group">
-                      <span class="date_naiss">Lancement</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="completion mr-2">Textile</span>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <span class="completion mr-2">13 Rue Dalia, Ras Jebal</span>
-                          </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Consulter</a>
-                          <a class="dropdown-item" href="#">Modifier</a>
-                          <a class="dropdown-item" href="#">Copier</a>
-                          <a class="dropdown-item" href="#">Supprimer</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="cin">
-                          <span class="name mb-0 text-sm">9260</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td class="num-dossier">
-                      11409260
-                    </td>
-                    <td>
-                      
-                        <i class="bg-warning"></i>
-                        <span class="nom-prenom">Petit Métier</span>
-                     
-                    </td>
-                    <td>
-                      <div class="avatar-group">
-                      <span class="date_naiss">Lancement</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="completion mr-2">Textile</span>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <span class="completion mr-2">13 Rue Dalia, Ras Jebal</span>
-                          </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Consulter</a>
-                          <a class="dropdown-item" href="#">Modifier</a>
-                          <a class="dropdown-item" href="#">Copier</a>
-                          <a class="dropdown-item" href="#">Supprimer</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <div class="cin">
-                          <span class="name mb-0 text-sm">9260</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td class="num-dossier">
-                      11409260
-                    </td>
-                    <td>
-                      
-                        <i class="bg-warning"></i>
-                        <span class="nom-prenom">Petit Métier</span>
-                     
-                    </td>
-                    <td>
-                      <div class="avatar-group">
-                      <span class="date_naiss">Lancement</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="completion mr-2">Textile</span>
-                      </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <span class="completion mr-2">13 Rue Dalia, Ras Jebal</span>
-                          </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">Consulter</a>
-                          <a class="dropdown-item" href="#">Modifier</a>
-                          <a class="dropdown-item" href="#">Copier</a>
-                          <a class="dropdown-item" href="#">Supprimer</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
+                   
                 </tbody>
               </table>
             </div>
-            <!-- Card footer -->
-            <div class="card-footer py-4">
-              <nav aria-label="...">
-                <ul class="pagination justify-content-end mb-0">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">
-                      <i class="fas fa-angle-left"></i>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                  </li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
-                      <i class="fas fa-angle-right"></i>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+        
           </div>
         </div>
       </div>

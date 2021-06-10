@@ -35,6 +35,7 @@ import {
   ToastNoAnimation,
   ToastNoAnimationModule
 } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -73,6 +74,7 @@ import {
     ReactiveFormsModule,
     ToastNoAnimationModule.forRoot(),
     HttpClientModule,
+    CommonModule,
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger', // set defaults here
     })

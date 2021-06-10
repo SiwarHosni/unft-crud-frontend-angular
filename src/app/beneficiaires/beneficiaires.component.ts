@@ -38,7 +38,7 @@ export class BeneficiairesComponent implements OnInit {
       this.getBeneficiaires();
     })}
   
-    placements = ['top', 'left', 'right', 'bottom'];
+   
   popoverTitle = 'Supprimer Bénéficiaire';
   popoverMessage = 'voulez-vous vraiment supprimer ce bénéficiaire de façon permanente?';
   confirmText = 'Oui <i class="fas fa-check"></i>';

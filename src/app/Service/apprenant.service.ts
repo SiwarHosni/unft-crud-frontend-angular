@@ -18,16 +18,16 @@ export class ApprenantService {
     return this.http.get<Apprenant[]>(`${this.baseURL}`);
   }
 
-  createApprenant(Apprenant: Apprenant): Observable<Object>{
-    return this.http.post(`${this.baseURL}`, Apprenant);
+  createApprenant(apprenant: Apprenant){
+    return this.http.post<any>(this.baseURL, apprenant);
   }
 
   getApprenantById(id: number): Observable<Apprenant>{
     return this.http.get<Apprenant>(`${this.baseURL}/${id}`);
   }
 
-  updateApprenant(id: number, Apprenant: Apprenant): Observable<Object>{
-    return this.http.put(`${this.baseURL}/${id}`, Apprenant);
+  updateApprenant(id: number, apprenant: Apprenant): Observable<Object>{
+    return this.http.put(`${this.baseURL}/${id}`, apprenant);
   }
 
   deleteApprenant(id: number): Observable<Object>{

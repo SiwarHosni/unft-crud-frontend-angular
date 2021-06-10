@@ -11,5 +11,10 @@ export class MicroComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  popoverTitle = 'Supprimer Projet';
+  popoverMessage = 'voulez-vous vraiment supprimer ce projet de façon permanente?';
+  confirmText = 'Oui <i class="fas fa-check"></i>';
+  cancelText = 'Non <i class="fas fa-times"></i>';
+  confirmClicked = false;
+  cancelClicked = false;
 }

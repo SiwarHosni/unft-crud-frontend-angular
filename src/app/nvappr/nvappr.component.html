@@ -363,10 +363,7 @@
                       <div class="col-8">
                         <h3 class="mb-0">Fiche d'information</h3>
                       </div>
-                      <div class="col-4 text-right">
-                        <a href="#!" class="btn btn-primary btn-lg">Enregistrer</a>
-                        <a href="#!" class="btn btn-secondary btn-lg">Annuler</a>
-                      </div>
+                      
                       
                     </div>
                   </div>
@@ -411,10 +408,7 @@
                           <div class="col-lg-4">
                               <div class="form-group">
                                   <label for="example-text-input" class="form-control-label">Date de naissance</label>
-                                  <input type="text" id="input-username" class="form-control" placeholder="Date de naissance" formControlName="date">
-                                  <div *ngIf="f.date.touched && f.date.invalid">
-                                  <small *ngIf="f.date.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
-                              </div>
+                                  <input class="form-control" type="date"  id="example-date-input">
                               </div>
                           </div>
                           <div class="col-lg-4">
@@ -438,6 +432,10 @@
                               </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="col-12 text-right">
+                        <button type="submit" class="btn btn-primary ">Enregistrer</button>
+                        <a [routerLink]="['/apprenants']" class="btn btn-secondary btn-lg">Annuler</a>
                       </div>
                    </form>
                   </div>
