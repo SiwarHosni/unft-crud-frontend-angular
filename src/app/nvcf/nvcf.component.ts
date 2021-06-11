@@ -12,24 +12,18 @@ import { CentformService } from '../Service/centform.service';
 export class NvcfComponent implements OnInit {myForm: FormGroup
 
   centform : Centform=new Centform();
-  submitted= false;
-  constructor(private fb: FormBuilder,
+
+  constructor(
     private centformService:CentformService,
     private router:Router) {}
 
   
 
   ngOnInit(): void {
-    this.myForm = this.fb.group({
-      idcf : ['', Validators.required],
-      nomcf : ['', Validators.required],
-      gouv : ['', Validators.required],
-      nbrapp : ['', Validators.required],
-      metier : ['', Validators.required]
-    });
+  
 
   }
-  get f() { return this.myForm.controls; }
+ 
 
   
   saveCf() {  
@@ -38,7 +32,13 @@ export class NvcfComponent implements OnInit {myForm: FormGroup
         console.log(data);
         this.goToCformList();
       },
-      error => console.log(error));  
+      error => {
+        // sol 0
+        if (error.status == 200) {
+          this.goToCformList();
+        }
+        console.log(error)
+      });  
   }  
 
   

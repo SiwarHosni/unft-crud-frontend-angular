@@ -357,239 +357,261 @@
               <h3 class="mb-0">Nouveau Bénéficiaires</h3>
             </div>
             <!-- Light table -->
-            <div class="col-xl-12 order-xl-1">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="row align-items-center">
-                      <div class="col-8">
-                        <h3 class="mb-0">Fiche d'information</h3>
-                      </div>
-                      <div class="col-4 text-right">
-                        <button type="submit"  class="btn btn-primary btn-lg"> Enregistrer </button>
-                        <a [routerLink]="['/beneficiaires']" class="btn btn-secondary btn-lg">Annuler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <form (ngSubmit) = "onSubmit()">
-                      <h6 class="heading-small text-muted mb-4">Information du bénéficiaire</h6>
-                      <div class="pl-lg-4">
-                        
-                        <div class="row">
-                          <div class="col-lg-4">
-                            <div class="form-group">
-                              <label class="form-control-label" for="input-email">Cin</label>
-                              <input class="form-control" type="text"  id="cin" placeholder="Cin"  name = "cin">
-                              <div >
-                            </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="form-group">
-                              <label class="form-control-label" for="input-email">Date d'émission</label>
-                              <input class="form-control" type="date"  id="example-date-input">
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="form-group">
-                              <label class="form-control-label" for="input-email">Lieu</label>
-                              <input class="form-control" type="text" placeholder="Lieu" id="example-text-input"  >
-                              <div >
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-4">
-                              <div class="form-group">
-                                  <label for="example-text-input" class="form-control-label">Nom</label>
-                                  <input class="form-control" type="text" id="example-text-input" placeholder="Nom" >
-                                  <div>
-                                </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Prénom</label>
-                                <input class="form-control" type="text" placeholder="Prénom" id="example-text-input" >
-                                <div>
-                              </div>
-                            </div>
-                        </div>
-                          <div class="col-lg-4">
-                         
-                          <div class="form-group">
-                              <label for="example-date-input" class="form-control-label">Date de naissance</label>
-                              <input class="form-control" type="date" id="example-date-input">
-                          </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">Adresse</label>
-                                    <input class="form-control" type="text" placeholder="Adresse" id="example-text-input" >
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                              <div class="form-group">
-                                  <label for="example-text-input" class="form-control-label">Gouvernorat</label>
-                                  <input class="form-control" type="text" placeholder="Gouvernorat" id="example-text-input" >
-                                  
-                              </div>
-                          </div>
-                            <div class="col-lg-4">
-                           
-                            <div class="form-group">
-                                <label for="example-date-input" class="form-control-label">Délégation</label>
-                                <input class="form-control" type="text" placeholder="Délégation" id="example-text-input" >
-                            </div>
-                            </div>
-                          </div>
-                        <div class="row">
-                          <div class="col-lg-4">
-                            
-                              <label class="form-control-label" for="input-first-name">Sexe</label><br>
-                              <select class="form-control">
-                                <option>Femme</option>
-                                <option>Homme</option>
-                              </select>
-                              
-                          </div>
-                          <div class="col-lg-4">
-                            
-                              <label class="form-control-label" for="input-first-name">Etat Civile</label><br>
-                              <select class="form-control">
-                                <option>Célibatire</option>
-                                <option>Marié</option>
-                                <option>Divorcé</option>
-                                <option>Veuf</option>
-                              </select>
-                              
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="form-group">
-                                <label for="example-tel-input" class="form-control-label">Tel</label>
-                                <input class="form-control" type="tel" placeholder="Tel" id="example-tel-input" >
-                            </div>
-                        </div>
-                        </div>
-                      </div>
-                      <hr class="my-4" />
-                      <!-- Address -->
-                      
-                      <div class="pl-lg-4">
-                        <div class="row">
-                          <div class="col-lg-4">
-                            <div class="form-group">
-                              <label class="form-control-label" for="input-address">Niveau Educatif</label>
-                              <select class="form-control">
-                                <option>Primaire</option>
-                                <option>De Base</option>
-                                <option>Secondaire</option>
-                                <option>Universitaire</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                              <div class="form-group">
-                                  <label for="example-tel-input" class="form-control-label">Profession</label>
-                                  <input class="form-control" type="text" placeholder="Profession" id="example-text-input" >
-                                  
-                              </div>
-                          </div>
-                         
-                         </div>
-                         
-                           <div class="row">
-                            <div class="col-lg-4">
-                              <div class="form-group">
-                                <label for="example-date-input" class="form-control-label">Durée de l'expérience</label>
-                                <input class="form-control" type="text" placeholder="Durée de l'expérience" id="example-text-input">
-                              </div>
-                            </div>
-                           <div class="col-lg-4">
-                            <div class="form-group">
-                              <label class="form-control-label" for="input-address">Logement</label>
-                              <select class="form-control">
-                                <option>Propriétaire</option>
-                                <option>Location</option>
-                                </select>
-                            </div>
-                          </div>
-                     
-                      </div>
-                     
-                </div>
-                <hr class="my-4" />
-                <div class="pl-lg-4">
-                    <div class="row">
-                      <div class="col-lg-4">
-                        <div class="form-group">
-                          <label class="form-control-label" for="input-address">Sources des Revenus du bénéficiaire</label>
-                          <select class="form-control">
-                            <option>Salaire</option>
-                            <option>Bouses</option>
-                            <option>Pensions civiles</option>
-                            <option>Autres</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-4">
-                          <div class="form-group">
-                              <label for="example-tel-input" class="form-control-label">Montant Mensuel</label>
-                              <input class="form-control" type="text" placeholder="Montant Mensuel" id="example-text-input" >
-                              
-                          </div>
-                      </div>
-                     
-                     </div>
-                     <div class="row">
-                        <div class="col-lg-4">
-                          <div class="form-group">
-                            <label class="form-control-label" for="input-address">Sources des Revenus des membres de la famille du bénéficiaire</label>
-                            <select class="form-control">
-                              <option>Salaire</option>
-                              <option>Bouses</option>
-                              <option>Pensions civiles</option>
-                              <option>Autres</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label for="example-tel-input" class="form-control-label">Montant Mensuel</label>
-                                <input class="form-control" type="text" placeholder="Montant Mensuel" id="example-text-input" >
-                                
-                            </div>
-                        </div>
-                       
-                       </div>
-                     <div class="row">
-                        <div class="col-lg-4">
-                          <div class="form-group">
-                            <label class="form-control-label" for="input-address">Nom du banque</label>
-                            <input class="form-control" type="text" placeholder="Nom Du Banque" id="example-text-input" >
-                            
-                        </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label for="example-tel-input" class="form-control-label">RIB du compte bancaire</label>
-                                <input class="form-control" type="text" placeholder="RIB" id="example-text-input" >
-                                
-                            </div>
-                        </div>
-                       </div>
-                </div>
-
-                    </form>
-                  </div>
-                </div>
-              </div>
+<!-- Light table -->
+<div class="col-xl-12 order-xl-1">
+  <form (ngSubmit)="onSubmit()">
+    <div class="card">
+      <div class="card-header">
+        <div class="row align-items-center">
+          <div class="col-8">
+            <h3 class="mb-0">Fiche d'information</h3>
+          </div>
+          <div class="col-4 text-right">
+            <button type="submit" class="btn btn-primary btn-lg"> Enregistrer </button>
+            <a [routerLink]="['/beneficiaires']" class="btn btn-secondary btn-lg">Annuler</a>
           </div>
         </div>
       </div>
+      <div class="card-body">
+
+        <h6 class="heading-small text-muted mb-4">Information du bénéficiaire</h6>
+        <div class="pl-lg-4">
+
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-email">Cin</label>
+                <input [(ngModel)]="beneficiaire.cin" class="form-control" type="text" id="cin"
+                  placeholder="Cin" name="cin">
+                <div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-email">Date d'émission</label>
+                <input [(ngModel)]="beneficiaire.date_emission" name="date_emission" class="form-control"
+                  type="date" id="example-date-input">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-email">Lieu</label>
+                <input [(ngModel)]="beneficiaire.lieu_cin" name="lieu_cin" class="form-control" type="text"
+                  placeholder="Lieu" id="example-text-input">
+                <div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-text-input" class="form-control-label">Nom</label>
+                <input [(ngModel)]="beneficiaire.nomb" name="nomb" class="form-control" type="text"
+                  id="example-text-input" placeholder="Nom">
+                <div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-text-input" class="form-control-label">Prénom</label>
+                <input [(ngModel)]="beneficiaire.prenomb" name="prenomb" class="form-control" type="text"
+                  placeholder="Prénom" id="example-text-input">
+                <div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+
+              <div class="form-group">
+                <label for="example-date-input" class="form-control-label">Date de naissance</label>
+                <input [(ngModel)]="beneficiaire.date_naissance" name="date_naissance" class="form-control"
+                  type="date" id="example-date-input">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-text-input" class="form-control-label">Adresse</label>
+                <input [(ngModel)]="beneficiaire.adresse" name="adresse" class="form-control" type="text"
+                  placeholder="Adresse" id="example-text-input">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-text-input" class="form-control-label">Gouvernorat</label>
+                <input [(ngModel)]="beneficiaire.gouv_b" name="gouv_b" class="form-control" type="text"
+                  placeholder="Gouvernorat" id="example-text-input">
+
+              </div>
+            </div>
+            <div class="col-lg-4">
+
+              <div class="form-group">
+                <label for="example-date-input" class="form-control-label">Délégation</label>
+                <input [(ngModel)]="beneficiaire.delegation" name="delegation" class="form-control"
+                  type="text" placeholder="Délégation" id="example-text-input">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+
+              <label class="form-control-label" for="input-first-name">Sexe</label><br>
+              <select [(ngModel)]="beneficiaire.sexe" name="sexe" class="form-control">
+                <option>Femme</option>
+                <option>Homme</option>
+              </select>
+
+            </div>
+            <div class="col-lg-4">
+
+              <label class="form-control-label" for="input-first-name">Etat Civile</label><br>
+              <select [(ngModel)]="beneficiaire.etat_civile" name="etat_civile" class="form-control">
+                <option>Célibatire</option>
+                <option>Marié</option>
+                <option>Divorcé</option>
+                <option>Veuf</option>
+              </select>
+
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-tel-input" class="form-control-label">Tel</label>
+                <input [(ngModel)]="beneficiaire.tel" name="tel" class="form-control" type="tel"
+                  placeholder="Tel" id="example-tel-input">
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <!-- Address -->
+
+        <div class="pl-lg-4">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-address">Niveau Educatif</label>
+                <select [(ngModel)]="beneficiaire.niveau_ed" name="niveau_ed" class="form-control">
+                  <option>Primaire</option>
+                  <option>De Base</option>
+                  <option>Secondaire</option>
+                  <option>Universitaire</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-tel-input" class="form-control-label">Profession</label>
+                <input [(ngModel)]="beneficiaire.profession" name="profession" class="form-control"
+                  type="text" placeholder="Profession" id="example-text-input">
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-date-input" class="form-control-label">Durée de l'expérience</label>
+                <input [(ngModel)]="beneficiaire.duree_experience" name="duree_experience"
+                  class="form-control" type="text" placeholder="Durée de l'expérience"
+                  id="example-text-input">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-address">Logement</label>
+                <select [(ngModel)]="beneficiaire.logement" name="logement" class="form-control">
+                  <option>Propriétaire</option>
+                  <option>Location</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <hr class="my-4" />
+        <div class="pl-lg-4">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-address">Sources des Revenus du
+                  bénéficiaire</label>
+                <select [(ngModel)]="beneficiaire.src_rev_b" name="src_rev_b" class="form-control">
+                  <option>Salaire</option>
+                  <option>Bourses</option>
+                  <option>Pensions civiles</option>
+                  <option>Autres</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-tel-input" class="form-control-label">Montant Mensuel</label>
+                <input [(ngModel)]="beneficiaire.mm_rev_b" name="mm_rev_b" class="form-control" type="text"
+                  placeholder="Montant Mensuel" id="example-text-input">
+
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-address">Sources des Revenus des membres de la
+                  famille du bénéficiaire</label>
+                <select [(ngModel)]="beneficiaire.src_rev_fam_b" name="src_rev_fam_b" class="form-control">
+                  <option>Salaire</option>
+                  <option>Bouses</option>
+                  <option>Pensions civiles</option>
+                  <option>Autres</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-tel-input" class="form-control-label">Montant Mensuel</label>
+                <input [(ngModel)]="beneficiaire.mm_rev_fam_b" name="mm_rev_fam_b" class="form-control"
+                  type="text" placeholder="Montant Mensuel" id="example-text-input">
+
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-address">Nom du banque</label>
+                <input [(ngModel)]="beneficiaire.nom_banque" name="nom_banque" class="form-control"
+                  type="text" placeholder="Nom Du Banque" id="example-text-input">
+
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="example-tel-input" class="form-control-label">RIB du compte bancaire</label>
+                <input [(ngModel)]="beneficiaire.rib" name="rib" class="form-control" type="text"
+                  placeholder="RIB" id="example-text-input">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
 
       </div>
-      <app-footer></app-footer>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<app-footer></app-footer>

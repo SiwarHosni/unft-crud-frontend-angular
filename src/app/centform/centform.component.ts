@@ -15,6 +15,7 @@ export class CentformComponent implements OnInit {
   centforms : Centform[];
 
   ngOnInit(): void {
+    this.getCentforms();
   }
   private getCentforms(){
     this.centformService.getallCentform().subscribe(data => {

@@ -356,6 +356,7 @@
             </div>
             <!-- Light table -->
             <div class="col-xl-12 order-xl-1">
+              <form  (ngSubmit)="onSubmit()">
                 <div class="card">
                   <div class="card-header">
                     <div class="row align-items-center">
@@ -363,23 +364,22 @@
                         <h3 class="mb-0">Fiche d'information</h3>
                       </div>
                       <div class="col-4 text-right">
-                        <a href="#!" class="btn btn-primary btn-lg">Enregistrer</a>
-                        <a href="#!" class="btn btn-secondary btn-lg">Annuler</a>
+                        <button type="submit" class="btn btn-primary btn-lg">Enregistrer</button>
+                        <a [routerLink]="['/centform']" class="btn btn-secondary btn-lg">Annuler</a>
                       </div>
                     </div>
                   </div>
                   <div class="card-body">
-                    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    
                       <h6 class="heading-small text-muted mb-4">Information du Centre de formation</h6>
                       <div class="pl-lg-4">
                         <div class="row">
                             <div class="col-lg-4">
                               <div class="form-group">
                                 <label class="form-control-label" for="input-username">ID Centre de formation</label>
-                                <input type="text" id="input-username" class="form-control" placeholder="ID" formControlName="idcf">
-                                <div *ngIf="f.idcf.touched && f.idcf.invalid">
-                                  <small *ngIf="f.idcf.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
-                              </div>
+                                <input [(ngModel)]="centform.id_cf" type="text" id="input-username" class="form-control" placeholder="ID"
+                                name="id_cf" >
+                               
                               </div>
                             </div>
                         </div>
@@ -387,19 +387,15 @@
                           <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-email">Nom du Centre de formation</label>
-                              <input class="form-control" type="text" id="input-cin" placeholder="Nom" formControlName="nomcf">
-                              <div *ngIf="f.nomcf.touched && f.nomcf.invalid">
-                                  <small *ngIf="f.nomcf.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
-                              </div>
+                              <input [(ngModel)]="centform.nom_cf" name="nom_cf" class="form-control" type="text" id="input-cin" placeholder="Nom" >
+                              
                             </div>
                           </div>
                           <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-email">Gouvernorat</label>
-                              <input class="form-control" type="text" placeholder="Gouvernorat" id="example-text-input" formControlName="gouv">
-                              <div *ngIf="f.gouv.touched && f.gouv.invalid">
-                                  <small *ngIf="f.gouv.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
-                              </div>
+                              <input [(ngModel)]="centform.gouv_cf" name="gouv_cf" class="form-control" type="text" placeholder="Gouvernorat" id="example-text-input" >
+                             
                             </div>
                           </div>
                         </div>
@@ -408,27 +404,25 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Nombre d'apprenant</label>
-                                    <input type="text" id="input-username" class="form-control" placeholder="Nombre d'apprenant" formControlName="nbrapp">
-                                    <div *ngIf="f.nbrapp.touched && f.nbrapp.invalid">
-                                  <small *ngIf="f.nbrapp.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
-                              </div>
+                                    <input [(ngModel)]="centform.nbrappr_cf" name="nbrappr_cf" type="text" id="input-username" class="form-control" placeholder="Nombre d'apprenant" >
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                   <label for="example-date-input" class="form-control-label">Métier</label>
-                                  <textarea class="form-control" placeholder="Métiers" id="exampleFormControlTextarea1" rows="3" formControlName="metier"></textarea>
-                                  <div *ngIf="f.metier.touched && f.metier.invalid">
-                                  <small *ngIf="f.metier.errors.required" class="text-danger">Ce champ est obligatoire <br></small>
-                              </div>
+                                  <textarea [(ngModel)]="centform.metier" class="form-control" placeholder="Métiers" id="exampleFormControlTextarea1" rows="3" name="metier"></textarea>
+                                  
                                 </div>
                             </div>
                           </div>
                      </div>
-                   </form>
+                  
                   </div>
                 </div>
+              </form>
               </div>
+            
           </div>
         </div>
       </div>

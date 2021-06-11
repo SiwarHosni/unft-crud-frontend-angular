@@ -25,23 +25,30 @@ export class NvbenefComponent implements OnInit {
 
 
   
-  saveBeneficiaire(){
-    this.beneficiaireService.createBeneficiaire(this.beneficiaire).subscribe( data =>{
-      console.log(data);
-      this.goToBeneficiaireList();
-    },
-    error => console.log(error));
+  saveBeneficiaire() {
+
+    this.beneficiaireService.createBeneficiaire(this.beneficiaire)
+      .subscribe(data => {
+        console.log(data);
+        this.goToEmployeeList();
+      },
+        error => {
+          // sol 0
+          if (error.status == 200) {
+            this.goToEmployeeList();
+          }
+          console.log(error)
+        });
   }
 
-
-  
-  goToBeneficiaireList(){
+  goToEmployeeList() {
     this.router.navigate(['/beneficiaires']);
   }
-  
-  onSubmit(){
+
+  onSubmit() {
     console.log(this.beneficiaire);
     this.saveBeneficiaire();
   }
+
 
 }

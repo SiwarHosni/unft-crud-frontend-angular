@@ -18,8 +18,8 @@ export class CentformService {
     return this.http.get<Centform[]>(`${this.baseURL}`);
   }
 
-  createCentform(centform: Centform){
-    return this.http.post<any>(this.baseURL, centform);
+  createCentform(centform: Centform): Observable<Object>{
+    return this.http.post(this.baseURL, centform);
   }
 
   getCentformById(id: number): Observable<Centform>{
